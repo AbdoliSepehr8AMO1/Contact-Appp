@@ -18,7 +18,7 @@ class CommentController extends Controller
             'body' => 'required',
         ]);
 
-
+        //check if the user is auth
         $user = auth()->user();
         $comment = Comment::create([
             'user_id' => $user->id,

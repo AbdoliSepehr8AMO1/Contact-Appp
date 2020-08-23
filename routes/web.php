@@ -22,5 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
 
 
+
+//comments routes
 Route::get('/{post}/comments', 'CommentController@index');
 Route::post('/{post}/comments', 'CommentController@store');

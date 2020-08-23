@@ -9,6 +9,8 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
+
+    // if the user the role of admin the redirect to admin.dashbord if not redirect to home
     public function index()
     {
         {

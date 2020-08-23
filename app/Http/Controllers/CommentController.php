@@ -9,11 +9,16 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+
+
     public function store(Post $post)
     {
+        //validation a post must have a body
         $this->validate(request(), [
             'body' => 'required',
         ]);
+
+
         $user = auth()->user();
         $comment = Comment::create([
             'user_id' => $user->id,

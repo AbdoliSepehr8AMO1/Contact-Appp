@@ -124,6 +124,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    // destroy method to delete a post
     public function destroy(Post $post)
     {
         $post->delete();

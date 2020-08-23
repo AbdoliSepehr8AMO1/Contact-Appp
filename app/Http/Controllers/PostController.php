@@ -131,6 +131,8 @@ class PostController extends Controller
         return response()->json(null, 204);
     }
 
+
+    // a method that is performed on the landing page
     public function all()
     {
         $posts = Post::latest()->paginate(5);

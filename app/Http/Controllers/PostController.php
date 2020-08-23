@@ -48,6 +48,7 @@ class PostController extends Controller
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
+
         $post = new Post();
 
         if ($request->hasFile('image')) {
@@ -74,6 +75,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    // apply the array in the postresoruce
     public function show(Post $post)
     {
         return new PostResource($post);

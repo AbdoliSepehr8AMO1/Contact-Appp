@@ -3,10 +3,19 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Schema\Builder;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
     /**
      * Register any application services.
      *
@@ -15,15 +24,5 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    function boot()
-    {
-        Builder::defaultStringLength(191); // Update defaultStringLength
     }
 }

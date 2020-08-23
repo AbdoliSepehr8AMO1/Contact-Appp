@@ -19,18 +19,16 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
         if ($request->user()->hasRole('user')) {
-            return view('home');
+            return redirect('/');
         }
 
         if ($request->user()->hasRole('admin')) {
             return redirect('/admin/dashboard');
         }
     }
-
-
 }

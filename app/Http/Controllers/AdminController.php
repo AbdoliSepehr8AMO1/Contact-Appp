@@ -8,15 +8,15 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function index()
     {
-        if (request()->user()->hasRole('admin')) {
-            return view('admin.dashboard');
-        }
-
-        if (request()->user()->hasRole('user')) {
-            return redirect('/home');
+        {
+            if (request()->user()->hasRole('admin')) {
+                return view('admin.dashboard');
+            }
+            if (request()->user()->hasRole('user')) {
+                return redirect('/home');
+            }
         }
     }
 }

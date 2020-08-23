@@ -1,27 +1,31 @@
+
 <?php
 
+use App\Role;
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use App\User;
-use App\Role;
 
 class UserTableSeeder extends Seeder
 {
 
     public function run()
     {
-        $user = new User;
-        $user->name = 'Samuel Jackson';
-        $user->email = 'samueljackson@jackson.com';
-        $user->password = bcrypt('samuel1234');
-        $user->save();
-        $user->roles()->attach(Role::where('name', 'user')->first());
+        $role_regular_user = Role::where('name', 'user')->first();
+        $role_admin_user = Role::where('name', 'admin')->first();
 
-        $admin = new User;
-        $admin->name = 'Neo Ighodaro';
-        $admin->email = 'neo@creativitykills.co';
-        $admin->password = bcrypt('neo1234');
-        $admin->save();
-        $admin->roles()->attach(Role::where('name', 'admin')->first());
+        $regular_user = new User();
+        $regular_user->name = 'Samuel Jackson';
+        $regular_user->email = 'samueljackson@jackson.com';
+        $regular_user->password = Hash::make('samuel1234');
+        $regular_user->save();
+        $regular_user->roles()->attach($role_regular_user);
+
+        $admin_user = new User();
+        $admin_user->name = 'Neo Ighodaro';
+        $admin_user->email = 'neo@creativitykills.co';
+        $admin_user->password = Hash::make('neo1234');
+        $admin_user->save();
+        $admin_user->roles()->attach($role_admin_user);
     }
 }

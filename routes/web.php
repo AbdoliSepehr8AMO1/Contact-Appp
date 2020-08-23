@@ -12,7 +12,6 @@
  */
 
 Route::get('/', 'PostController@all');
-
 Route::get('/posts/{post}', 'PostController@single');
 
 Auth::routes();

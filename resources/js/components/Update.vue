@@ -1,4 +1,6 @@
 <!-- File: ./resources/app/js/components/Update.vue -->
+
+<!-- vue files zijn voor front-end -->
 <template>
     <div class="container">
         <form>

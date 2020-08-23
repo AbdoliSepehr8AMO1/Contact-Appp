@@ -37,6 +37,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    // if you want to store a thing it has to require the following information
     public function store(Request $request)
     {
         $this->validate($request, [

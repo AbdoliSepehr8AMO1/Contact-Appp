@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 class AdminController extends Controller
 {
+    // construct is a securtiy method that checks if the user is auth
     public function __construct()
     {
         $this->middleware('auth');

@@ -101,6 +101,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
     public function update(Request $request, Post $post)
     {
         $this->validate($request, [
@@ -108,9 +110,12 @@ class PostController extends Controller
             'body' => 'required',
         ]);
 
+        // yoou can only update the title and the body and then return the updated version
         $post->update($request->only(['title', 'body']));
         return new PostResource($post);
     }
+
+
 
     /**
      * Remove the specified resource from storage.

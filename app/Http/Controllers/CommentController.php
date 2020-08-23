@@ -20,7 +20,7 @@ class CommentController extends Controller
 
         //check if the user is auth
         $user = auth()->user();
-        // if the user is auth then make the query 
+        // if the user is auth then make the query
         $comment = Comment::create([
             'user_id' => $user->id,
             'post_id' => $post->id,

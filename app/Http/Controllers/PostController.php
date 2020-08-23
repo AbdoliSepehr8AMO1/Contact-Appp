@@ -14,6 +14,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    // show the latest post and limit it with a paginate/max of 5posts
     public function index()
     {
         return PostResource::collection(Post::latest()->paginate(5));

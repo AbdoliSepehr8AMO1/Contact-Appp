@@ -71,6 +71,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+
+        //the user role, is always attached to a new user at registration
         $user->roles()->attach(Role::where('name', 'user')->first());
         return $user;
 

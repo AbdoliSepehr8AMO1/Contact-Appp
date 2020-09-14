@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        // If the role is user redirect the user to dashboard
         if ($request->user()->hasRole('user')) {
             return redirect('/');
         }
@@ -31,5 +32,5 @@ class HomeController extends Controller
         if ($request->user()->hasRole('admin')) {
             return redirect('/admin/dashboard');
         }
-    }ph
+    }
 }

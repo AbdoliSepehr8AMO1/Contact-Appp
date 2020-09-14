@@ -11,17 +11,18 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = new User;
-        $user->name = 'Samuel Jackson';
-        $user->email = 'samueljackson@jackson.com';
-        $user->password = bcrypt('samuel1234');
+        $user->name = 'sepehr user';
+        $user->email = 'sepehruser@outlook.com';
+        $user->password = bcrypt('test123');
         $user->save();
         $user->roles()->attach(Role::where('name', 'user')->first());
 
         $admin = new User;
-        $admin->name = 'Neo Ighodaro';
-        $admin->email = 'neo@creativitykills.co';
-        $admin->password = bcrypt('neo1234');
+        $admin->name = 'sepehr admin';
+        $admin->email = 'sepehradmin@outlook.com';
+        $admin->password = bcrypt('test123');
         $admin->save();
         $admin->roles()->attach(Role::where('name', 'admin')->first());
     }
 }
+

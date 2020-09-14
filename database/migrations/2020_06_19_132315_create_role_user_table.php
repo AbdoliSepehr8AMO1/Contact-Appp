@@ -13,6 +13,9 @@ class CreateRoleUserTable extends Migration
      */
     public function up()
     {
+        // we hebben de  php artisan make:auth gebruikt om zo user autentication to implementen
+        // php artisan make:model Role -m
+
         Schema::create('role_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('role_id')->unsigned();

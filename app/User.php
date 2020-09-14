@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    // we intend to create a many-to-many relationship between the User and Role models so let’s add a relationship method on both models.
     public function roles()
     {
         return $this->belongsToMany(Role::class);

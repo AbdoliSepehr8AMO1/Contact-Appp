@@ -34,6 +34,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+
+
+
+    //We will be adding a checkRoles method that checks what role a user has. We will return a 404 page where a user doesn’t have the expected role for a page
     public function checkRoles($roles)
     {
 
@@ -53,6 +57,14 @@ class User extends Authenticatable
     {
         return null !== $this->roles()->where('name', $role)->first();
     }
+
+
+
+
+
+
+
+
 
     public function posts()
     {

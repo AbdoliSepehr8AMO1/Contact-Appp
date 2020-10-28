@@ -6,6 +6,7 @@
   <div class="col-lg-10 mx-auto">
     <br>
     <h3 class="mt-4">{{ $post->title }} <span class="lead"> by <a href="#"> {{ $post->user->name }} </a></span> </h3>
+    <h3 class="mt-4">{{ $post->price }} <span class="lead"> by <a href="#"> {{ $post->user->name }} </a></span> </h3>
     <hr>
     <p>Posted {{ $post->created_at->diffForHumans() }} </p>
     <hr>

@@ -15,9 +15,5 @@ class Post extends Model
     }
 
 
-    // a user can have many comments
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
+
 }

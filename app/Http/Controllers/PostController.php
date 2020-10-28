@@ -45,6 +45,7 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required',
             'user_id' => 'required',
+            'price' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
@@ -63,6 +64,7 @@ class PostController extends Controller
         $post->user_id = $request->user_id;
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->price = $request->price;
         $post->save();
 
         return new PostResource($post);
@@ -108,10 +110,11 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
+            'price' => 'required',
         ]);
 
         // yoou can only update the title and the body and then return the updated version
-        $post->update($request->only(['title', 'body']));
+        $post->update($request->only(['title', 'body' ,'price']));
         return new PostResource($post);
     }
 

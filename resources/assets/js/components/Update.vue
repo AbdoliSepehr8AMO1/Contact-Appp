@@ -9,6 +9,7 @@
  <div :class="['form-group m-1 p-3', error ? 'alert-danger' : '']">
     <span v-if="errors.title" class="label label-danger"> {{ errors.title[0] }} </span>
     <span v-if="errors.body" class="label label-danger"> {{ errors.body[0] }} </span>
+     <span v-if="errors.price" class="label label-danger"> {{ errors.price[0] }} </span>
 </div>
 
 
@@ -19,6 +20,12 @@
 <div class="form-group">
   <textarea class="form-control" ref="body" id="body" placeholder="Enter a body" rows="8" required></textarea>
 </div>
+
+    <div class="form-group">
+        <textarea class="form-control" ref="price" id="price" placeholder="Enter a price" rows="8" required></textarea>
+    </div>
+
+
   <button type="submit" @click.prevent="update" class="btn btn-primary block">Submit</button>
 </form>
 </div>
@@ -47,6 +54,7 @@ export default {
     update() {
       let title = this.$refs.title.value;
       let body = this.$refs.body.value;
+      let price = this.$refs.price.value;
       axios
         .put('/api/posts/' + this.postId, { title, body })
         .then(response => {
@@ -68,6 +76,7 @@ export default {
       axios.get('/api/posts/' + this.postId).then(response => {
         this.$refs.title.value = response.data.data.title;
         this.$refs.body.value = response.data.data.body;
+          this.$refs.price.value = response.data.data.price;
       });
     }
   }

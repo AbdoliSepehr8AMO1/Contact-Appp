@@ -18,7 +18,13 @@
 <div class="form-group">
   <textarea class="form-control" ref="body" id="body" placeholder="Enter a body" rows="8" required></textarea>
 </div>
-            
+
+// wrm werkt dit niet????????????
+    <div class="form-group">
+        <textarea class="form-control" ref="price" id="price" placeholder="Enter a price" rows="8" required></textarea>
+    </div>
+
+
 <div class="custom-file mb-3">
   <input type="file" ref="image" name="image" class="custom-file-input" id="image" required>
     <label class="custom-file-label" >Choose file...</label>
@@ -69,6 +75,7 @@ export default {
         });
       this.$refs.title.value = "";
       this.$refs.body.value = "";
+      this.$refs.price.value = "";
     }
   }
 };

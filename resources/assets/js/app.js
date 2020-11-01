@@ -7,7 +7,7 @@ import Homepage from './components/Homepage'
 import Create   from './components/Create'
 import Read     from './components/Read'
 import Update   from './components/Update'
-import Comments from './components/Comments'
+
 
 const router = new VueRouter({
     mode: 'history',
@@ -34,6 +34,6 @@ const router = new VueRouter({
 });
 const app = new Vue({
     el: '#app',
-    components: { Homepage, Comments },
+    components: { Homepage},
     router,
 });

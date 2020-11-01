@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 
 class RoleTableSeeder extends Seeder
 {
+    //data die je all doorgeeft
     public function run()
     {
         $role_regular_user = new Role();

@@ -5,11 +5,11 @@
 <div :class="['form-group m-1 p-3', successful ? 'alert-success' : '']">
   <span v-if="successful" class="label label-sucess"> Published! </span>
 </div>
- <div :class="['form-group m-1 p-3', error ? 'alert-danger' : '']">
-    <span v-if="errors.title" class="label label-danger"> {{ errors.title[0] }} </span>
-    <span v-if="errors.body" class="label label-danger"> {{ errors.body[0] }} </span>
-    <span v-if="errors.image" class="label label-danger"> {{ errors.image[0] }} </span>
-</div>
+ <!--<div :class="['form-group m-1 p-3', error ? 'alert-danger' : '']">-->
+    <!--<span v-if="errors.title" class="label label-danger"> {{ errors.title[0] }} </span>-->
+    <!--<span v-if="errors.body" class="label label-danger"> {{ errors.body[0] }} </span>-->
+    <!--<span v-if="errors.image" class="label label-danger"> {{ errors.image[0] }} </span>-->
+<!--</div>-->
             
 <div class="form-group">
   <input type="title" ref="title" class="form-control" id="title" placeholder="Enter title" required>
@@ -19,10 +19,7 @@
   <textarea class="form-control" ref="body" id="body" placeholder="Enter a body" rows="8" required></textarea>
 </div>
 
-// wrm werkt dit niet????????????
-    <div class="form-group">
-        <textarea class="form-control" ref="price" id="price" placeholder="Enter a price" rows="8" required></textarea>
-    </div>
+
 
 
 <div class="custom-file mb-3">

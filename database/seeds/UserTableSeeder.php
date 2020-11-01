@@ -8,6 +8,7 @@ use App\Role;
 class UserTableSeeder extends Seeder
 {
 
+    //data die je all doorgeeft
     public function run()
     {
         $user = new User;

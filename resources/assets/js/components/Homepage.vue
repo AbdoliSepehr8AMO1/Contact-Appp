@@ -7,7 +7,7 @@
     <a style="color: white" href="/admin/dashboard">HOME</a>
     <hr>
     <ul>
-       <li> <router-link :to="{ name: 'create', params: { userId } }">NEW POST </router-link></li>
+       <li> <router-link :to="{ name: 'create', params: { userId } }">NEW WISH </router-link></li>
     </ul>
   </section>
 </nav>

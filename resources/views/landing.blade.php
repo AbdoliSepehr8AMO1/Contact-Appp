@@ -13,7 +13,6 @@
         <h2 class="card-title text-center">{{ $post->title }}</h2>
         <h3 class="card-title text-center">{{ $post->price }}</h3>
         <p class="card-text"> {{ str_limit($post->body, $limit = 280, $end = '...') }} </p>
-        <a href="/posts/{{ $post->id }}" class="btn btn-primary">Read More &rarr;</a>
       </div>
       <div class="card-footer text-muted">
         Posted {{ $post->created_at->diffForHumans() }} by

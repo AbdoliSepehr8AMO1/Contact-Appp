@@ -8,8 +8,11 @@ class CreatePostsTable extends Migration
 {
     public function up()
     {
+        //gegevens van een post of in dit geval wish
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+
+            // ik weet niet wat unsigned betekent maar dit heeft wel te maken met de relationship van de user en de post
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->integer('price');
